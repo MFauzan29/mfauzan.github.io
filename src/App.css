@@ -1,0 +1,15 @@
+/* CSS untuk animasi fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-out forwards; /* Menggunakan animasi fadeIn selama 1 detik */
+}
