@@ -6,6 +6,15 @@ import Typewriter from "typewriter-effect";
 import { useInView } from "react-intersection-observer";
 
 function App() {
+  // State untuk skills
+  const [showProgramming, setShowProgramming] = useState(false);
+  const [showIBM, setShowIBM] = useState(false);
+  const [showCISCO, setShowCisco] = useState(false);
+  const [showWeb, setShowWeb] = useState(false);
+  const [showNetworking, setShowNetworking] = useState(false);
+  const [showML, setShowML] = useState(false);
+  const [showTools, setShowTools] = useState(false);
+
   // State untuk menyimpan nilai opacity background
   const [bgOpacity, setBgOpacity] = useState(1);
 
@@ -164,40 +173,188 @@ function App() {
             />
             <ul className="list-none mx-auto my-12 flex flex-col sm:flex-row items-center gap-8">
               <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
-                <h3 className="text-xl  text-center text-slate-900 dark:text-white mb-4">
-                  &#128435; <div className="font-semibold">Skills</div>
+                <h3 className="text-xl text-center text-slate-900 dark:text-white mb-4">
+                  💻 <div className="font-semibold">Technical Skills</div>
                 </h3>
-                <ul className="text-center text-slate-700 dark:text-slate-300">
-                  <li>ReactJS</li>
-                  <li>NodeJS</li>
-                  <li>JavaScript</li>
-                  <li>TailwindCSS</li>
+                <ul className="text-left text-slate-700 dark:text-slate-300 space-y-4">
+                  {/* Programming */}
+                  <li className="border border-solid rounded-4xl  py-4 px-6 hover:bg-yellow-300 hover:text-black">
+                    <span
+                      onClick={() => setShowProgramming(!showProgramming)}
+                      className="font-bold cursor-pointer hover:underline block text-center sm:text-center"
+                    >
+                      {showProgramming ? "▼" : ""} Programming Languages
+                    </span>
+                    {showProgramming && (
+                      <ul className="list-disc list-inside ml-4">
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>JavaScript</li>
+                        <li>C</li>
+                        <li>SQL</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  {/* Web Dev */}
+                  <li className="border border-solid rounded-4xl py-4 px-6 hover:bg-yellow-300 hover:text-black">
+                    <span
+                      onClick={() => setShowWeb(!showWeb)}
+                      className="font-bold cursor-pointer hover:underline block text-center sm:text-center"
+                    >
+                      {showWeb ? "▼" : ""} Web Development
+                    </span>
+                    {showWeb && (
+                      <ul className="list-disc list-inside ml-4">
+                        <li>React JS</li>
+                        <li>Tailwind CSS</li>
+                        <li>Express.js</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  {/* Networking */}
+
+                  <li className="border border-solid rounded-4xl py-4 px-6 hover:bg-yellow-300 hover:text-black">
+                    <span
+                      onClick={() => setShowNetworking(!showNetworking)}
+                      className="font-bold cursor-pointer hover:underline block text-center sm:text-center"
+                    >
+                      {showNetworking ? "▼" : ""} Networking & Security
+                    </span>
+                    {showNetworking && (
+                      <ul className="list-disc list-inside ml-4">
+                        <li>
+                          Cisco CCNA (Intro, Switching & Routing, Enterprise
+                          Networking)
+                        </li>
+                        <li>Cisco Ethical Hacker</li>
+                        <li>Network Configuration</li>
+                        <li>Linux Server Administration</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  {/* Machine Learning */}
+
+                  <li className="border border-solid rounded-4xl py-4 px-6 hover:bg-yellow-300 hover:text-black">
+                    <span
+                      onClick={() => setShowML(!showML)}
+                      className="font-bold cursor-pointer hover:underline block text-center sm:text-center"
+                    >
+                      {showML ? "▼" : ""} Data Science & Machine Learning
+                    </span>
+                    {showML && (
+                      <ul className="list-disc list-inside ml-4">
+                        <li>Data Preprocessing</li>
+                        <li>Feature Selection</li>
+                        <li>Model Training & Evaluation</li>
+                        <li>Google Colab</li>
+                        <li>Scikit-Learn</li>
+                        <li>KNN</li>
+                        <li>Classification</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  {/* Tools */}
+
+                  <li className="border border-solid rounded-4xl py-4 px-6 hover:bg-yellow-300 hover:text-black">
+                    <span
+                      onClick={() => setShowTools(!showTools)}
+                      className="font-bold cursor-pointer hover:underline block text-center sm:text-center"
+                    >
+                      {showProgramming ? "▼" : ""} Tools & Frameworks
+                    </span>
+                    {showTools && (
+                      <ul className="list-disc list-inside ml-4">
+                        <li>GitHub</li>
+                        <li>Google Cloud</li>
+                        <li>Firebase</li>
+                        <li>Node.js</li>
+                        <li>PyTorch </li>
+                      </ul>
+                    )}
+                  </li>
                 </ul>
               </li>
+
               <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
                 <h3 className="text-xl font-semibold text-center text-slate-900 dark:text-white mb-4">
-                  Education
+                  Soft Skills 🧠
                 </h3>
-                <p className="text-center text-slate-700 dark:text-slate-300">
-                  Undergraduate student of Computer Engineering at Universitas
-                  Indonesia
+                <p className="text-slate-700 dark:text-slate-300">
+                  <ul className="list-disc list-inside ml-4">
+                    <li>Leadership & Team Management</li>
+                    <li>Communication & Public Speaking</li>
+                    <li>Critical Thinking & Problem Solving</li>
+                    <li>Project Management & Event Planning</li>
+                    <li>Time Management & Adaptability</li>
+                  </ul>
                 </p>
               </li>
+
               <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
-                <h3 className="text-xl font-semibold text-center text-slate-900 dark:text-white mb-4">
-                  Projects
+                <h3 className="text-xl text-center text-slate-900 dark:text-white mb-4">
+                  📂{" "}
+                  <div className="font-semibold">Certifications & Courses</div>
                 </h3>
-                <ul className="text-center text-slate-700 dark:text-slate-300">
-                  <li>UI Help (Campus Disaster Reporting App)</li>
-                  <li>Home Security System</li>
+                <ul className="text-left text-slate-700 dark:text-slate-300 space-y-4">
+                  {/* IBM */}
+                  <li className="border border-solid rounded-4xl py-4 px-6 hover:bg-yellow-300 hover:text-black">
+                    <span
+                      onClick={() => setShowIBM(!showIBM)}
+                      className="font-bold cursor-pointer hover:underline block text-center sm:text-center"
+                    >
+                      {showIBM ? "▼" : ""} IBM / Cognitive Class
+                    </span>
+                    {showIBM && (
+                      <ul className="list-disc list-inside ml-4">
+                        <li>Python 101 for Data Science (2025)</li>
+                        <li>Machine Learning with Python (2025)</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  {/* Cisco */}
+                  <li className="border border-solid rounded-4xl py-4 px-6 hover:bg-yellow-300 hover:text-black">
+                    <span
+                      onClick={() => setShowCisco(!showCISCO)}
+                      className="font-bold cursor-pointer hover:underline block text-center sm:text-center"
+                    >
+                      {showCISCO ? "▼" : ""}Cisco Networking Academy
+                    </span>
+                    {showCISCO && (
+                      <ul className="list-disc list-inside ml-4">
+                        <li>CCNA: Introduction to Networks (2023)</li>
+                        <li>
+                          CCNA: Enterprise Networking, Security, and Automation
+                          (2023)
+                        </li>
+                        <li>
+                          CCNA: Switching, Routing, and Wireless Essentials
+                          (2024)
+                        </li>
+                        <li>Ethical Hacker (2024)</li>
+                      </ul>
+                    )}
+                  </li>
                 </ul>
               </li>
+
               <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
                 <h3 className="text-xl font-semibold text-center text-slate-900 dark:text-white mb-4">
-                  Experience
+                  🌟 Achievements & Recognition
                 </h3>
-                <p className="text-center text-slate-700 dark:text-slate-300">
-                  Internship at XYZ Company
+                <p className=" text-slate-700 dark:text-slate-300">
+                  <ul className="list-disc list-inside ml-4">
+                    <li>Best BPH IME FTUI 2024</li>
+                    <li>
+                      Best Student Affairs Board (IME FTUI 2023) Q1 & Q2/3A
+                    </li>
+                    <li>Honorable Mention BPH (Q2/3A)</li>
+                    <li>Project Officer of MAKRO 2022 (400+ participants)</li>
+                  </ul>
                 </p>
               </li>
             </ul>
