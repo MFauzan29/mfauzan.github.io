@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import FotoProfile from "./assets/FotoFauzan.JPG";
 import FotoKotak from "./assets/FauzanKotak.JPG";
+import LogoLinkedin from "./assets/logo-linkedin.png";
+import LogoGithub from "./assets/logo-github.png";
+import LogoInstagram from "./assets/logo-instagram.png";
 import Typewriter from "typewriter-effect";
 import { useInView } from "react-intersection-observer";
 
@@ -146,7 +149,7 @@ function App() {
                   className="rounded-full bg-transparent border border-white text-white mt-6 flex items-center gap-2 px-6 py-3 hover:bg-white  hover:text-black transition duration-300 font-bold hover:scale-110 "
                   onClick={() =>
                     window.open(
-                      "https://drive.google.com/file/d/1db9rNHC2UJP-FGSM0vDNCkRBqlT767P4/view?usp=sharing"
+                      "https://drive.google.com/file/d/1H2z0Ceer2uA5KpXmTtRf-8r9oXMFOr6M/view?usp=sharing"
                     )
                   }
                 >
@@ -171,8 +174,8 @@ function App() {
               src={FotoKotak}
               className="mx-auto mb-3 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/4 h-auto max-w-xs rounded-2xl shadow-lg transform transition duration-300 ease-in-out  hover:translate-y-2"
             />
-            <ul className="list-none mx-auto my-12 flex flex-col sm:flex-row items-center gap-8">
-              <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
+            <ul className="list-none mx-auto my-12 flex flex-col sm:flex-row flex-wrap justify-center items-stretch gap-6">
+              <li className="w-full sm:w-[320px] flex flex-col justify-center items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-4 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
                 <h3 className="text-xl text-center text-slate-900 dark:text-white mb-4">
                   💻 <div className="font-semibold">Technical Skills</div>
                 </h3>
@@ -278,23 +281,20 @@ function App() {
                   </li>
                 </ul>
               </li>
-
-              <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
+              <li className="w-full sm:w-[320px] flex flex-col justify-center items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-4 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
                 <h3 className="text-xl font-semibold text-center text-slate-900 dark:text-white mb-4">
                   Soft Skills 🧠
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300">
-                  <ul className="list-disc list-inside ml-4">
-                    <li>Leadership & Team Management</li>
-                    <li>Communication & Public Speaking</li>
-                    <li>Critical Thinking & Problem Solving</li>
-                    <li>Project Management & Event Planning</li>
-                    <li>Time Management & Adaptability</li>
-                  </ul>
-                </p>
+                <ul className="list-disc list-inside ml-4 text-slate-700 dark:text-slate-300">
+                  <li>Leadership & Team Management</li>
+                  <li>Communication & Public Speaking</li>
+                  <li>Critical Thinking & Problem Solving</li>
+                  <li>Project Management & Event Planning</li>
+                  <li>Time Management & Adaptability</li>
+                </ul>
               </li>
 
-              <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
+              <li className="w-full sm:w-[320px] flex flex-col justify-center items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-4 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
                 <h3 className="text-xl text-center text-slate-900 dark:text-white mb-4">
                   📂{" "}
                   <div className="font-semibold">Certifications & Courses</div>
@@ -342,7 +342,7 @@ function App() {
                 </ul>
               </li>
 
-              <li className="w-2/3 sm:w-5/6 flex flex-col items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-2 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
+              <li className="w-full sm:w-[320px] flex flex-col justify-center items-center border border-solid border-slate-900 dark:border-gray-100 bg-transparent py-6 px-4 rounded-3xl shadow-xl transform transition duration-300 hover:scale-105">
                 <h3 className="text-xl font-semibold text-center text-slate-900 dark:text-white mb-4">
                   🌟 Achievements & Recognition
                 </h3>
@@ -371,14 +371,172 @@ function App() {
           </section>
 
           <hr className="mt-10 mx-auto w-1/3  bg-black dark:bg-white " />
-
           <section id="contact" className="p-6 my-12">
             <heading>
               <h2 className="text-4xl font-bold text-center sm:text-5xl mb-2 text-slate-900 dark:text-white font-serif">
-                Contact
+                Contact Me
               </h2>
+              <p className="text-lg text-center mb-12 text-slate-700 dark:text-slate-300">
+                Feel free to contact me for further discussion
+              </p>
             </heading>
+
+            <div className="max-w-4xl mx-auto bg-slate-100 dark:bg-slate-900 p-8 rounded-lg shadow-xl border border-solid border-slate-300 dark:border-slate-700">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                Want to discuss? Just submit here.
+              </h3>
+              <p className="text-md text-slate-700 dark:text-slate-300 mb-6">
+                I will get back to you ASAP via email.
+              </p>
+
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      htmlFor="name"
+                      className="block text-slate-700 dark:text-slate-300 text-sm font-semibold mb-2"
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="shadow-sm appearance-none border border-slate-300 dark:border-slate-600 rounded w-full py-3 px-4 text-slate-900 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent dark:bg-slate-800"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-slate-700 dark:text-slate-300 text-sm font-semibold mb-2"
+                    >
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="shadow-sm appearance-none border border-slate-300 dark:border-slate-600 rounded w-full py-3 px-4 text-slate-900 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent dark:bg-slate-800"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="block text-slate-700 dark:text-slate-300 text-sm font-semibold mb-2"
+                  >
+                    Your Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows="5"
+                    className="shadow-sm appearance-none border border-slate-300 dark:border-slate-600 rounded w-full py-3 px-4 text-slate-900 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent dark:bg-slate-800"
+                    placeholder="Enter your Message"
+                  ></textarea>
+                </div>
+
+                <div className="flex justify-end">
+                  <button
+                    type="submit"
+                    className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
           </section>
+          <footer className="bg-slate-900 dark:bg-black text-white py-12 px-6">
+            <div className="max-w-4xl mx-auto flex flex-col items-center">
+              {/* Brand/Logo and Email */}
+              <div className="text-center mb-6">
+                <h2 className="text-4xl font-bold font-serif mb-2">
+                  <span className="text-yellow-500">about</span>Muhamad Fauzan
+                </h2>
+                <p className="text-md text-slate-400 flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-5 h-5 mr-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75a2.25 2.25 0 012.25-2.25h15a2.25 2.25 0 012.25 2.25z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M16.5 6.75L12 9.75l-4.5-3"
+                    />
+                  </svg>
+                  <a
+                    href="mailto:mfauzan2905@gmail.com"
+                    className="hover:underline"
+                  >
+                    mfauzan2905@gmail.com
+                  </a>
+                </p>
+              </div>
+
+              {/* Horizontal Line */}
+              <hr className="w-2/3 border-t border-slate-700 dark:border-slate-300 my-8" />
+
+              {/* Copyright and Social Media Icons */}
+              <div className="w-full flex flex-col sm:flex-row justify-between items-center text-sm text-slate-400">
+                <p className="mb-4 sm:mb-0">
+                  © 2025 Muhamad Fauzan. All rights reserved.
+                </p>
+                <div className="flex space-x-4">
+                  {/* GitHub Icon */}
+                  <a
+                    href="https://github.com/MFauzan29"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-slate-700 dark:bg-slate-800 rounded-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-110"
+                  >
+                    <img
+                      src={LogoGithub} // Menggunakan gambar yang diimpor
+                      alt="Github Logo"
+                      className="w-6 h-6" // Tailwind classes untuk ukuran
+                    />
+                  </a>
+
+                  {/* LinkedIn Icon */}
+                  <a
+                    href="https://www.linkedin.com/in/muhamad-fauzan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-slate-700 dark:bg-slate-800 rounded-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-110"
+                  >
+                    <img
+                      src={LogoLinkedin} // Menggunakan gambar yang diimpor
+                      alt="Linkedin Logo"
+                      className="w-6 h-6" // Tailwind classes untuk ukuran
+                    />
+                  </a>
+
+                  {/* Instagram Icon */}
+                  <a
+                    href="https://www.instagram.com/muhamad.fauzan._/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-slate-700 dark:bg-slate-800 rounded-lg hover:bg-yellow-500 transition duration-300 transform hover:scale-110"
+                  >
+                    <img
+                      src={LogoInstagram} // Menggunakan gambar yang diimpor
+                      alt="Instagram Logo"
+                      className="w-6 h-6" // Tailwind classes untuk ukuran
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </footer>
         </main>
       </body>
     </>
