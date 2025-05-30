@@ -8,6 +8,76 @@ import LogoInstagram from "./assets/logo-instagram.png";
 import Typewriter from "typewriter-effect";
 import { useInView } from "react-intersection-observer";
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// Import required Swiper modules
+import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Menambahkan Autoplay
+
+const projects = [
+  {
+    id: 1,
+    title: "Food Security Classification (2025)",
+    category: "Machine Learning",
+    description:
+      "A data-driven machine learning project designed to classify the level of food security across different regions in Indonesia. This project utilizes the K-Nearest Neighbors (KNN) algorithm to analyze regional indicators and predict vulnerability to food insecurity, helping stakeholders make better policy decisions. The model was trained and evaluated using regional food availability, accessibility, and utilization metrics collected from public datasets.",
+    image: [
+      // Sekarang ini adalah ARRAY of images
+      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
+      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
+      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
+    ],
+    link: "#",
+  },
+  {
+    id: 2,
+    title: "UIHelp (2024)",
+    category: "Fullstack Web App",
+    description:
+      "A real-time disaster reporting web application developed for Universitas Indonesia. UIHelp connects campus residents with security (PLK) to report incidents such as accidents, wild animals, fallen trees, fires, and floods. The app integrates Google Maps for geolocation, social media for wider broadcasting, and Firebase for real-time data handling. Built with ReactJS and ExpressJS, it emphasizes fast reporting and responsive coordination during emergencies.",
+    image: [
+      // Sekarang ini adalah ARRAY of images
+      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
+      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
+      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
+    ],
+    link: "#",
+  },
+  {
+    id: 3,
+    title: "Retroactive-SBD (2024)",
+    category: "Database Project",
+    description:
+      "An academic project focusing on designing and implementing a relational database for an online platform that sells retro music items like vinyl, cassettes, and vintage players. Built as part of the Database Systems course, the project includes Entity Relationship Diagram (ERD), normalization, stored procedures, and query optimization. The system is intended to simulate a real-world e-commerce database environment.",
+    image: [
+      // Sekarang ini adalah ARRAY of images
+      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
+      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
+      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
+    ],
+    link: "#",
+  },
+  {
+    id: 4,
+    title: "JBus (2023)",
+    category: "Fullstack Mobile App",
+    description:
+      "A comprehensive mobile ticket booking application for intercity buses developed using Java and Android Studio. JBus features user authentication, seat selection, real-time bus tracking, and ticket generation. It incorporates SQLite for local data storage and adheres to MVC design patterns. This project demonstrates end-to-end mobile development skills from frontend UI to backend data management.",
+    image: [
+      // Sekarang ini adalah ARRAY of images
+      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
+      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
+      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
+    ],
+    link: "#",
+  },
+];
+
 function App() {
   // State untuk skills
   const [showProgramming, setShowProgramming] = useState(false);
@@ -360,14 +430,61 @@ function App() {
             </ul>
           </section>
 
-          <hr className="mt-10 mx-auto w-1/3  bg-black dark:bg-white " />
+          <hr className="mt-10 mx-auto w-1/3 bg-black dark:bg-white " />
 
           <section id="myworks" className="p-6 my-12">
             <heading>
               <h2 className="text-4xl font-bold text-center sm:text-5xl mb-2 text-slate-900 dark:text-white font-serif">
-                My Works
+                My Latest Work
               </h2>
+              <p className="text-lg text-center mb-12 text-slate-700 dark:text-slate-300 max-w-2xl mx-auto">
+                There are many variations of project that I deliver
+                successfully, here are some examples.
+              </p>
             </heading>
+
+            <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projects.map((project) => (
+                <div
+                  key={project.id}
+                  className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg shadow-xl transform transition duration-300 hover:scale-105 flex flex-col overflow-hidden"
+                >
+                  <div
+                    className="relative overflow-hidden rounded-md mb-4 flex-shrink-0"
+                    style={{ height: "250px" }}
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                    />
+                  </div>
+                  <div className="flex-grow">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
+                      {project.title}
+                    </h3>
+                    <p className="text-sm text-yellow-500 font-semibold mb-3">
+                      {project.category}
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-300 text-md mb-4">
+                      {project.description}
+                    </p>
+                  </div>
+                  <div className="mt-auto">
+                    {" "}
+                    {/* Untuk menjaga tombol di bagian bawah */}
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full hover:bg-yellow-500 hover:text-black transition duration-300 font-medium"
+                    >
+                      See Detail →
+                    </a>
+                  </div>
+                </div>
+              ))}
+            </div>
           </section>
 
           <hr className="mt-10 mx-auto w-1/3  bg-black dark:bg-white " />
@@ -447,6 +564,7 @@ function App() {
               </form>
             </div>
           </section>
+
           <footer className="bg-slate-900 dark:bg-black text-white py-12 px-6">
             <div className="max-w-4xl mx-auto flex flex-col items-center">
               {/* Brand/Logo and Email */}
