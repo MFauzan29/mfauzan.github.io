@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import projects from "../data/projectsData"; // <--- Import data proyek dari file terpisah
-
+import organizations from "../data/organizationExperience";
 // Import gambar-gambar utama (yang ada di src/assets/)
 import FotoProfile from "../assets/FotoFauzan.JPG";
 import FotoKotak from "../assets/FauzanKotak.JPG";
@@ -354,7 +354,74 @@ function HomePageContent() {
         </div>
       </section>
       <hr className="mt-10 mx-auto w-1/3 bg-black dark:bg-white " />
-      {/* Section Contact */}
+      <section id="organization" className="p-6 my-12">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold sm:text-5xl mb-2 text-slate-900 dark:text-white font-serif">
+            Organization Experience
+          </h2>
+          <p className="text-lg mb-12 text-slate-700 dark:text-slate-300">
+            I have actively participated in various student organizations and
+            held leadership roles throughout my academic journey. These
+            experiences have sharpened my skills in project management,
+            teamwork, public speaking, and event coordination.
+          </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {organizations.map((org) => (
+            <div
+              key={org.id}
+              className="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg shadow-xl transform transition duration-300 hover:scale-105 flex flex-col overflow-hidden"
+            >
+              <div
+                className="relative rounded-md mb-4 flex-shrink-0s"
+                style={{ height: "250px" }}
+              >
+                <Swiper
+                  modules={[Navigation, Pagination, Autoplay]}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  navigation
+                  pagination={{ clickable: true }}
+                  autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false,
+                  }}
+                  loop={true}
+                  className="w-full h-full rounded-md"
+                >
+                  {org.images?.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img
+                        src={image}
+                        alt={`${org.title} - Slide ${index + 1}`}
+                        className="w-full h-full object-cover rounded-md"
+                      />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
+              <div className="flex-grow">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">
+                  {org.title}
+                </h3>
+                <p className="text-sm text-yellow-500 font-semibold mb-3">
+                  {org.role}
+                </p>
+                <p className="text-slate-700 dark:text-slate-300 text-md mb-4">
+                  {org.description}
+                </p>
+                <ul className="list-disc list-inside text-slate-700 dark:text-slate-300 text-sm">
+                  {org.achievements.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <hr className="mt-10 mx-auto w-1/3 bg-black dark:bg-white " />
       <section id="contact" className="p-6 my-12">
         <div className="text-center">
           <h2 className="text-4xl font-bold sm:text-5xl mb-2 text-slate-900 dark:text-white font-serif">

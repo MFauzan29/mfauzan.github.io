@@ -91,14 +91,8 @@ function App() {
         </section>
       </header>
 
-      {/* <Routes> AKAN MENENTUKAN KONTEN UTAMA YANG BERGANTI SESUAI URL */}
       <Routes>
-        {/* Route untuk halaman utama yang berisi semua section (Home, About Me, My Works, Contact) */}
-        {/* 'element' akan merender komponen HomePageContent */}
         <Route path="/" element={<HomePageContent />} />
-
-        {/* Opsional: Route untuk halaman 404 (Not Found) */}
-        {/* <Route path="*" element={<NotFoundPage />} /> */}
       </Routes>
 
       {/* FOOTER ADA DI LUAR <Routes> AGAR SELALU TERLIHAT */}
