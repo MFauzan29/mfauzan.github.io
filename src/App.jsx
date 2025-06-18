@@ -8,7 +8,6 @@ import { Routes, Route, Link } from "react-router-dom"; // <--- HANYA SATU KALI 
 
 // Import komponen halaman yang telah Anda buat
 import HomePageContent from "./pages/HomePageContent"; // <--- Komponen untuk halaman utama
-import PdfViewerPage from "./pages/PdfViewerPage"; // <--- Komponen untuk PDF Viewer
 
 // Import gambar-gambar logo (jika masih di src/assets/)
 // Ini hanya untuk header dan footer yang ada di App.jsx
@@ -97,10 +96,6 @@ function App() {
         {/* Route untuk halaman utama yang berisi semua section (Home, About Me, My Works, Contact) */}
         {/* 'element' akan merender komponen HomePageContent */}
         <Route path="/" element={<HomePageContent />} />
-
-        {/* Route baru untuk PDF Viewer Page, menggunakan parameter URL :documentId */}
-        {/* Parameter ':documentId' akan diambil oleh useParams() di PdfViewerPage */}
-        <Route path="/reports/:documentId" element={<PdfViewerPage />} />
 
         {/* Opsional: Route untuk halaman 404 (Not Found) */}
         {/* <Route path="*" element={<NotFoundPage />} /> */}

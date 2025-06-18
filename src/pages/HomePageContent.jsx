@@ -17,9 +17,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-// Import Link dari react-router-dom untuk tombol "See Documents"
-import { Link } from "react-router-dom";
-
 function HomePageContent() {
   // Pindahkan SEMUA state hooks dan useEffect yang terkait dengan visibility/opacity/skills di sini
   const [showProgramming, setShowProgramming] = useState(false);
@@ -333,7 +330,7 @@ function HomePageContent() {
               </div>
               <div className="mt-auto flex flex-wrap gap-2 justify-start">
                 <a
-                  href={project.link}
+                  href={project.documentLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full hover:bg-yellow-500 hover:text-black transition duration-300 font-medium"
@@ -342,12 +339,14 @@ function HomePageContent() {
                 </a>
 
                 {project.documentId && (
-                  <Link // Menggunakan Link dari react-router-dom
-                    to={`/reports/${project.documentId}`}
+                  <a
+                    href={project.documentLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-full transition duration-300 font-medium"
                   >
                     See Documents
-                  </Link>
+                  </a>
                 )}
               </div>
             </div>

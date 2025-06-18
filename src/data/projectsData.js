@@ -21,8 +21,7 @@ const projects = [
     description:
       "A real-time disaster reporting web application developed for Universitas Indonesia. UIHelp connects campus residents with security (PLK) to report incidents such as accidents, wild animals, fallen trees, fires, and floods. The app integrates Google Maps for geolocation, social media for wider broadcasting, and Firebase for real-time data handling. Built with ReactJS and ExpressJS, it emphasizes fast reporting and responsive coordination during emergencies.",
     images: [
-      // Sekarang ini adalah ARRAY of images
-      "/assets/project2.1.png", // Gambar pertama
+      "/assets/project2.1.png",
       "/assets/project2.2.png",
       "/assets/project2.3.png",
       "/assets/project2.4.png",
@@ -34,8 +33,8 @@ const projects = [
       "/assets/project2.10.png",
     ],
     link: "https://github.com/MFauzan29/UIHelp",
-    documentId: "uihelp-rpl-report",
-    documentTitle: "UIHelp Report",
+    documentLink:
+      "https://drive.google.com/file/d/1kz9mGLLtgQiUv-VXS_aeaRHQoeNvzxHA/view?usp=sharing",
   },
   {
     id: 3,
@@ -44,11 +43,10 @@ const projects = [
     description:
       "An academic project focusing on designing and implementing a relational database for an online platform that sells retro music items like vinyl, cassettes, and vintage players. Built as part of the Database Systems course, the project includes Entity Relationship Diagram (ERD), normalization, stored procedures, and query optimization. The system is intended to simulate a real-world e-commerce database environment.",
     images: [
-      // Sekarang ini adalah ARRAY of images
-      "./assets/project3.1.png", // Gambar pertama
-      "./assets/project3.2.png", // Gambar kedua
-      "./assets/project3.3.png", // dan seterusnya
-      "./assets/project3.4.png",
+      "/assets/project3.1.png",
+      "/assets/project3.2.png",
+      "/assets/project3.3.png",
+      "/assets/project3.4.png",
     ],
     link: "https://github.com/SistemBasisData2024/Retroactive-SBD",
   },
@@ -59,12 +57,12 @@ const projects = [
     description:
       "A comprehensive mobile ticket booking application for intercity buses developed using Java and Android Studio. JBus features user authentication, seat selection, real-time bus tracking, and ticket generation. It incorporates SQLite for local data storage and adheres to MVC design patterns. This project demonstrates end-to-end mobile development skills from frontend UI to backend data management.",
     images: [
-      // Sekarang ini adalah ARRAY of images
-      "./assets/screenshot1.png", // Gambar pertama
-      "./assets/screenshot2.png", // Gambar kedua
-      "./assets/screenshot3.png", // dan seterusnya
+      "/assets/project4.1.png",
+      "/assets/project4.2.png",
+      "/assets/project4.3.png",
     ],
     link: "https://github.com/MFauzan29/JBus",
+    // Tidak ada documentLink jika tidak ada dokumen eksternal
   },
 ];
 
