@@ -19,65 +19,6 @@ import "swiper/css/pagination";
 // Import required Swiper modules
 import { Navigation, Pagination, Autoplay } from "swiper/modules"; // Menambahkan Autoplay
 
-const projects = [
-  {
-    id: 1,
-    title: "Food Security Classification (2025)",
-    category: "Machine Learning",
-    description:
-      "A data-driven machine learning project designed to classify the level of food security across different regions in Indonesia. This project utilizes the K-Nearest Neighbors (KNN) algorithm to analyze regional indicators and predict vulnerability to food insecurity, helping stakeholders make better policy decisions. The model was trained and evaluated using regional food availability, accessibility, and utilization metrics collected from public datasets.",
-    image: [
-      // Sekarang ini adalah ARRAY of images
-      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
-      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
-      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
-    ],
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "UIHelp (2024)",
-    category: "Fullstack Web App",
-    description:
-      "A real-time disaster reporting web application developed for Universitas Indonesia. UIHelp connects campus residents with security (PLK) to report incidents such as accidents, wild animals, fallen trees, fires, and floods. The app integrates Google Maps for geolocation, social media for wider broadcasting, and Firebase for real-time data handling. Built with ReactJS and ExpressJS, it emphasizes fast reporting and responsive coordination during emergencies.",
-    image: [
-      // Sekarang ini adalah ARRAY of images
-      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
-      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
-      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
-    ],
-    link: "#",
-  },
-  {
-    id: 3,
-    title: "Retroactive-SBD (2024)",
-    category: "Database Project",
-    description:
-      "An academic project focusing on designing and implementing a relational database for an online platform that sells retro music items like vinyl, cassettes, and vintage players. Built as part of the Database Systems course, the project includes Entity Relationship Diagram (ERD), normalization, stored procedures, and query optimization. The system is intended to simulate a real-world e-commerce database environment.",
-    image: [
-      // Sekarang ini adalah ARRAY of images
-      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
-      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
-      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
-    ],
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "JBus (2023)",
-    category: "Fullstack Mobile App",
-    description:
-      "A comprehensive mobile ticket booking application for intercity buses developed using Java and Android Studio. JBus features user authentication, seat selection, real-time bus tracking, and ticket generation. It incorporates SQLite for local data storage and adheres to MVC design patterns. This project demonstrates end-to-end mobile development skills from frontend UI to backend data management.",
-    image: [
-      // Sekarang ini adalah ARRAY of images
-      "/assets/employee-tracker-screenshot1.png", // Gambar pertama
-      "/assets/employee-tracker-screenshot2.png", // Gambar kedua
-      "/assets/employee-tracker-screenshot3.png", // dan seterusnya
-    ],
-    link: "#",
-  },
-];
-
 function App() {
   // State untuk skills
   const [showProgramming, setShowProgramming] = useState(false);
@@ -121,6 +62,68 @@ function App() {
     triggerOnce: true, // Efek terjadi hanya sekali
     threshold: 0.5, // Efek akan mulai ketika gambar 50% terlihat
   });
+
+  const projects = [
+    {
+      id: 1,
+      title: "Food Security Classification (2025)",
+      category: "Machine Learning",
+      description:
+        "A data-driven machine learning project designed to classify the level of food security across different regions in Indonesia. This project utilizes the K-Nearest Neighbors (KNN) algorithm to analyze regional indicators and predict vulnerability to food insecurity, helping stakeholders make better policy decisions. The model was trained and evaluated using regional food availability, accessibility, and utilization metrics collected from public datasets.",
+      images: [
+        // Sekarang ini adalah ARRAY of images
+        // "./assets/screenshot1.png", // Gambar pertama
+        // "./assets/screenshot2.png", // Gambar kedua
+        // "./assets/screenshot3.png", // dan seterusnya
+        FotoProfile,
+        FotoProfile,
+        FotoProfile,
+      ],
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "UIHelp (2024)",
+      category: "Fullstack Web App",
+      description:
+        "A real-time disaster reporting web application developed for Universitas Indonesia. UIHelp connects campus residents with security (PLK) to report incidents such as accidents, wild animals, fallen trees, fires, and floods. The app integrates Google Maps for geolocation, social media for wider broadcasting, and Firebase for real-time data handling. Built with ReactJS and ExpressJS, it emphasizes fast reporting and responsive coordination during emergencies.",
+      images: [
+        // Sekarang ini adalah ARRAY of images
+        "/assets/screenshot1.png", // Gambar pertama
+        "/assets/screenshot2.png", // Gambar kedua
+        "/assets/screenshot3.png", // dan seterusnya
+      ],
+      link: "#",
+    },
+    {
+      id: 3,
+      title: "Retroactive-SBD (2024)",
+      category: "Database Project",
+      description:
+        "An academic project focusing on designing and implementing a relational database for an online platform that sells retro music items like vinyl, cassettes, and vintage players. Built as part of the Database Systems course, the project includes Entity Relationship Diagram (ERD), normalization, stored procedures, and query optimization. The system is intended to simulate a real-world e-commerce database environment.",
+      images: [
+        // Sekarang ini adalah ARRAY of images
+        "./assets/screenshot1.png", // Gambar pertama
+        "./assets/screenshot2.png", // Gambar kedua
+        "./assets/screenshot3.png", // dan seterusnya
+      ],
+      link: "#",
+    },
+    {
+      id: 4,
+      title: "JBus (2023)",
+      category: "Fullstack Mobile App",
+      description:
+        "A comprehensive mobile ticket booking application for intercity buses developed using Java and Android Studio. JBus features user authentication, seat selection, real-time bus tracking, and ticket generation. It incorporates SQLite for local data storage and adheres to MVC design patterns. This project demonstrates end-to-end mobile development skills from frontend UI to backend data management.",
+      images: [
+        // Sekarang ini adalah ARRAY of images
+        "./assets/screenshot1.png", // Gambar pertama
+        "./assets/screenshot2.png", // Gambar kedua
+        "./assets/screenshot3.png", // dan seterusnya
+      ],
+      link: "#",
+    },
+  ];
 
   return (
     <>
@@ -453,11 +456,30 @@ function App() {
                     className="relative overflow-hidden rounded-md mb-4 flex-shrink-0"
                     style={{ height: "250px" }}
                   >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                    />
+                    <Swiper
+                      modules={[Navigation, Pagination, Autoplay]} // Aktifkan module yang dibutuhkan
+                      spaceBetween={0} // Jarak antar slide
+                      slidesPerView={1} // Tampilkan 1 slide per view
+                      navigation // Aktifkan tombol navigasi (panah kiri/kanan)
+                      pagination={{ clickable: true }} // Aktifkan pagination (dot)
+                      autoplay={{
+                        delay: 3500, // Durasi antar slide otomatis (3.5 detik)
+                        disableOnInteraction: false, // Jangan berhenti autoplay saat interaksi user
+                      }}
+                      loop={true} // Membuat slide berulang
+                      className="w-full h-full rounded-md" // Styling untuk Swiper container
+                    >
+                      {/* Loop melalui array gambar di dalam objek proyek */}
+                      {project.images?.map((image, index) => (
+                        <SwiperSlide key={index}>
+                          <img
+                            src={image} // Gunakan path gambar dari array images
+                            alt={`${project.title} - Slide ${index + 1}`}
+                            className="w-full h-full object-cover rounded-md"
+                          />
+                        </SwiperSlide>
+                      )) || null}
+                    </Swiper>
                   </div>
                   <div className="flex-grow">
                     <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-1">

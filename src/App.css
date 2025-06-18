@@ -13,3 +13,24 @@
 .fade-in {
   animation: fadeIn 1s ease-out forwards; /* Menggunakan animasi fadeIn selama 1 detik */
 }
+
+/* src/App.css */
+
+/* Warna panah navigasi Swiper */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #f59e0b; /* Warna kuning */
+  /* Sesuaikan warna ini jika Anda mau */
+}
+
+/* Warna pagination dots (indikator bawah) */
+.swiper-pagination-bullet {
+  background-color: #d1d5db; /* Warna abu-abu terang untuk dot tidak aktif */
+  opacity: 0.5;
+}
+
+/* Warna dot yang aktif */
+.swiper-pagination-bullet-active {
+  background-color: #f59e0b; /* Warna kuning untuk dot aktif */
+  opacity: 1;
+}
