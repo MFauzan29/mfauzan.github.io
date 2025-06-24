@@ -17,7 +17,33 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
+
 function HomePageContent() {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_webportofauzan",
+        "Template_gvdkpnq",
+        form.current,
+        "gbVtiwZmEZKW9dHTP"
+      )
+      .then(
+        (result) => {
+          alert("Message sent successfully!");
+          console.log(result.text);
+        },
+        (error) => {
+          alert("Failed to send message, please try again.");
+          console.log(error.text);
+        }
+      );
+  };
   // Pindahkan SEMUA state hooks dan useEffect yang terkait dengan visibility/opacity/skills di sini
   const [showProgramming, setShowProgramming] = useState(false);
   const [showIBM, setShowIBM] = useState(false);
@@ -440,7 +466,7 @@ function HomePageContent() {
             I will get back to you ASAP via email.
           </p>
 
-          <form className="space-y-6">
+          <form ref={form} onSubmit={sendEmail} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label
@@ -451,6 +477,7 @@ function HomePageContent() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   id="name"
                   className="shadow-sm appearance-none border border-slate-300 dark:border-slate-600 rounded w-full py-3 px-4 text-slate-900 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent dark:bg-slate-800"
                   placeholder="Enter your name"
@@ -465,11 +492,28 @@ function HomePageContent() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   id="email"
                   className="shadow-sm appearance-none border border-slate-300 dark:border-slate-600 rounded w-full py-3 px-4 text-slate-900 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent dark:bg-slate-800"
                   placeholder="Enter your email"
                 />
               </div>
+            </div>
+
+            <div>
+              <label
+                htmlFor="title"
+                className="block text-slate-700 dark:text-slate-300 text-sm font-semibold mb-2"
+              >
+                Title
+              </label>
+              <textarea
+                type="text"
+                name="title" // untuk {{title}} di subject
+                id="title"
+                className="shadow-sm appearance-none border border-slate-300 dark:border-slate-600 rounded w-full py-3 px-4 text-slate-900 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent dark:bg-slate-800"
+                placeholder="Enter your Title"
+              ></textarea>
             </div>
 
             <div>

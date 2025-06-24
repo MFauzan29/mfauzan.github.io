@@ -12,9 +12,24 @@ const organizations = [
       "🏅 Received Honorable Mention BPH for Quarter 2/3A",
       "👨‍👩‍👧‍👦 Led advanced development program for 300+ students (2023 batch)",
       "🧭 Steering Committee member for 250+ new student orientation (2024 batch)",
-      "👥*Supervised 3 expert staff and 13 board members (Badan Pengurus)",
+      "👥Supervised 3 expert staff and 13 board members (Badan Pengurus)",
     ],
-    images: ["/assets/ime-1.png", "/assets/ime-org2.png"], // Ganti dengan gambar asli Anda
+    images: [
+      "/assets/bphime1.png",
+      "/assets/bphime2.png",
+      "/assets/bphime3.png",
+      "/assets/bphime4.png",
+      "/assets/bphime5.png",
+      "/assets/bphime6.png",
+      "/assets/bphime7.png",
+      "/assets/bphime8.png",
+      "/assets/bphime9.png",
+      "/assets/bphime10.png",
+      "/assets/bphime11.png",
+      "/assets/bphime12.png",
+      "/assets/bphime13.png",
+      "/assets/bphime14.png",
+    ], // Ganti dengan gambar asli Anda
   },
   {
     id: 2,
