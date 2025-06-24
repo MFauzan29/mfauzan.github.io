@@ -52,7 +52,15 @@ const organizations = [
       "🎓 Organized alumni sharing sessions for career insights",
       "💡 Developed freshman support system",
     ],
-    images: ["/assets/ime-staff-org1.png", "/assets/ime-staff-org2.png"], // Ganti dengan gambar asli Anda
+    images: [
+      "/assets/bpime1.png",
+      "/assets/bpime2.png",
+      "/assets/bpime3.png",
+      "/assets/bpime4.png",
+      "/assets/bpime5.png",
+      "/assets/bpime6.png",
+      "/assets/bpime7.png",
+    ], // Ganti dengan gambar asli Anda
   },
 ];
 
