@@ -29,7 +29,7 @@ function HomePageContent() {
     emailjs
       .sendForm(
         "service_webportofauzan",
-        "Template_gvdkpnq",
+        "template_gvdkpnq",
         form.current,
         "gbVtiwZmEZKW9dHTP"
       )
@@ -525,6 +525,7 @@ function HomePageContent() {
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows="5"
                 className="shadow-sm appearance-none border border-slate-300 dark:border-slate-600 rounded w-full py-3 px-4 text-slate-900 dark:text-white leading-tight focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent dark:bg-slate-800"
                 placeholder="Enter your Message"
