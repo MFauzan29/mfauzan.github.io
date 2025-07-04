@@ -1,9 +1,6 @@
-// src/pages/HomePageContent.jsx
-
 import React, { useState, useEffect } from "react";
 import projects from "../data/projectsData"; // <--- Import data proyek dari file terpisah
 import organizations from "../data/organizationExperience";
-// Import gambar-gambar utama (yang ada di src/assets/)
 import FotoProfile from "../assets/FotoFauzan.JPG";
 import FotoKotak from "../assets/FauzanKotak.JPG";
 
@@ -60,9 +57,6 @@ function HomePageContent() {
 
   return (
     <main className="w-full min-h-screen pt-15">
-      {" "}
-      {/* pt-15 untuk spasi dari header fixed */}
-      {/* Section Home */}
       <section
         id="home"
         className="max-w-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-yellow-100 to-white dark:from-gray-800 dark:to-black p-6"
@@ -355,16 +349,29 @@ function HomePageContent() {
                 </p>
               </div>
               <div className="mt-auto flex flex-wrap gap-2 justify-start">
-                <a
-                  href={project.documentLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full hover:bg-yellow-500 hover:text-black transition duration-300 font-medium"
-                >
-                  See Detail →
-                </a>
+                {project.detailLink && (
+                  <a
+                    href={project.detailLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-black dark:bg-white text-white dark:text-black rounded-full hover:bg-yellow-500 hover:text-black transition duration-300 font-medium"
+                  >
+                    See Detail →
+                  </a>
+                )}
 
-                {project.documentId && (
+                {project.link && ( // Assuming 'link' is for GitHub or a live demo
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-800 text-white rounded-full transition duration-300 font-medium"
+                  >
+                    See Code / Demo
+                  </a>
+                )}
+
+                {project.documentLink && ( // This will now correctly check for the dedicated document link
                   <a
                     href={project.documentLink}
                     target="_blank"

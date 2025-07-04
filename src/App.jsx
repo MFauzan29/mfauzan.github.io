@@ -18,9 +18,12 @@ import LogoInstagram from "./assets/logo-instagram.png";
 // Hapus import yang tidak digunakan lagi (projects, FotoProfile, FotoKotak, Typewriter, useInView, Swiper)
 // karena sudah dipindahkan ke HomePageContent.jsx
 
+import { Link as ScrollLink } from "react-scroll";
+
 function App() {
   // Hanya state dan useEffect yang mempengaruhi LAYOUT GLOBAL (misalnya header)
   const [bgOpacity, setBgOpacity] = useState(1);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,44 +54,95 @@ function App() {
         }}
       >
         <section className="mx-auto flex max-w-4xl items-center justify-between p-4 ">
-          <h1 className="text-3xl font-medium">
-            {/* Menggunakan Link untuk navigasi ke halaman utama */}
-            <Link to="/" className="font-bold text-white">
+          <h1 className="text-2xl font-medium md:text-3xl">
+            <ScrollLink
+              to="home"
+              smooth={true}
+              duration={600}
+              offset={-80}
+              className="font-bold text-white cursor-pointer"
+            >
               🚀Muhamad Fauzan
-            </Link>
+            </ScrollLink>
           </h1>
-          <div>
-            <button
-              id="mobile-menu-button"
-              className="text-3xl md:hidden focus:outline-none text-white"
+
+          {/* Toggle Button (Only on Mobile) */}
+          <button
+            id="mobile-menu-button"
+            className="text-3xl md:hidden focus:outline-none text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            &#9776;
+          </button>
+
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex space-x-8 text-lg bg-amber-100 px-6 py-3 rounded-full shadow-md whitespace-nowrap transition duration-300">
+            <ScrollLink
+              to="home"
+              smooth={true}
+              duration={600}
+              offset={-80}
+              className="cursor-pointer hover:bg-amber-500 px-3 py-1 rounded-full font-medium"
             >
-              &#9776;
-            </button>
-            <nav
-              className="hidden md:flex space-x-8 text-lg bg-amber-100 px-6 py-3 rounded-full shadow-md whitespace-nowrap"
-              aria-label="main"
+              Home
+            </ScrollLink>
+            <ScrollLink
+              to="aboutme"
+              smooth={true}
+              duration={600}
+              offset={-80}
+              className="cursor-pointer hover:bg-amber-500 px-3 py-1 rounded-full font-medium"
             >
-              {/* Menggunakan Link untuk navigasi internal ke halaman utama (Home) */}
-              <Link
-                to="/"
-                className="link hover:opacity-90 font-medium hover:bg-amber-500 hover:rounded-full"
-              >
-                Home
-              </Link>
-              {/* Untuk link ke section di halaman yang sama, gunakan <a> dengan href relatif ke root page */}
-              {/* Ini penting agar tidak reload penuh saat klik # */}
-              <a href="/#aboutme" className="hover:opacity-90 font-medium">
-                About Me
-              </a>
-              <a href="/#myworks" className="hover:opacity-90 font-medium">
-                My Works
-              </a>
-              <a href="/#contact" className="hover:opacity-90 font-medium">
-                Contact Me
-              </a>
-            </nav>
-          </div>
+              About Me
+            </ScrollLink>
+            <ScrollLink
+              to="myworks"
+              smooth={true}
+              duration={600}
+              offset={-80}
+              className="cursor-pointer hover:bg-amber-500 px-3 py-1 rounded-full font-medium"
+            >
+              My Works
+            </ScrollLink>
+            <ScrollLink
+              to="contact"
+              smooth={true}
+              duration={600}
+              offset={-80}
+              className="cursor-pointer hover:bg-amber-500 px-3 py-1 rounded-full font-medium"
+            >
+              Contact Me
+            </ScrollLink>
+          </nav>
         </section>
+
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+          } bg-black/30 backdrop-blur-md`}
+        >
+          <nav className="flex flex-col px-6 py-4 space-y-2">
+            {["home", "aboutme", "myworks", "contact"].map((section, index) => (
+              <ScrollLink
+                key={index}
+                to={section}
+                smooth={true}
+                duration={600}
+                offset={-80}
+                onClick={() => setIsMenuOpen(false)} // ⬅️ ini penting!
+                className="cursor-pointer px-4 py-2 rounded-full border border-white hover:bg-white/10 transition-colors duration-300 text-white text-center font-medium"
+              >
+                {section === "home"
+                  ? "Home"
+                  : section === "aboutme"
+                  ? "About Me"
+                  : section === "myworks"
+                  ? "My Works"
+                  : "Contact Me"}
+              </ScrollLink>
+            ))}
+          </nav>
+        </div>
       </header>
 
       <Routes>
