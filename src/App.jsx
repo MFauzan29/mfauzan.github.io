@@ -55,6 +55,9 @@ function App() {
       root.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
+
+    // DEBUG LOG
+    console.log("Current HTML class:", root.className);
   }, [darkMode]);
 
   return (
@@ -62,10 +65,9 @@ function App() {
     <div className="min-h-screen bg-slate-50 dark:bg-black dark:text-white overflow-x-hidden">
       {/* HEADER ADA DI LUAR <Routes> AGAR SELALU TERLIHAT */}
       <header
-        className="fixed top-0 left-0 w-full z-50 text-black opacity-100"
-        style={{
-          backgroundColor: `rgba(25,35,49, ${bgOpacity})`, // Menggunakan state bgOpacity di sini
-        }}
+        className={`fixed top-0 left-0 w-full z-50 text-black transition duration-300 ${
+          darkMode ? "bg-black/70" : "bg-slate-900/80"
+        }`}
       >
         <section className="mx-auto flex max-w-5xl items-center justify-between p-4 ">
           <h1 className="text-2xl font-medium md:text-3xl">

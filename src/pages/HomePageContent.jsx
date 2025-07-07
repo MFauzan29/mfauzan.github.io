@@ -56,10 +56,10 @@ function HomePageContent() {
   });
 
   return (
-    <main className="w-full min-h-screen pt-15">
+    <main className="w-full min-h-screen pt-15 bg-[#F8FAFC] dark:bg-black text-slate-900 dark:text-white overflow-x-hidden">
       <section
         id="home"
-        className="max-w-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-yellow-100 to-white dark:from-gray-800 dark:to-black p-6"
+        className="max-w-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-[#F8FAFC] to-white dark:from-gray-800 dark:to-black p-6"
       >
         <article>
           <img
