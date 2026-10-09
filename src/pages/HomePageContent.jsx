@@ -12,8 +12,8 @@ import {
   achievements,
   education,
 } from "../data/profileData";
-import FotoProfile from "../assets/FotoFauzan.JPG";
-import FotoKotak from "../assets/FauzanKotak.JPG";
+import FotoProfile from "../assets/foto-fauzan.webp";
+import FotoKotak from "../assets/fauzan-kotak.webp";
 
 import Typewriter from "typewriter-effect";
 import { useInView } from "react-intersection-observer";
@@ -243,6 +243,7 @@ function HomePageContent() {
           <img
             src={FotoKotak}
             alt="Muhamad Fauzan"
+            loading="lazy"
             className="mx-auto w-2/3 md:w-full max-w-xs rounded-2xl shadow-lg ring-4 ring-accent/60 transition duration-300 hover:-translate-y-1"
           />
           <div className="space-y-4 text-lg leading-relaxed text-foreground/80 dark:text-slate-300">
@@ -537,6 +538,8 @@ function HomePageContent() {
                       <img
                         src={image}
                         alt={`${project.title} - Slide ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover rounded-md"
                       />
                     </SwiperSlide>
@@ -671,6 +674,8 @@ function HomePageContent() {
                       <img
                         src={image}
                         alt={`${org.title} - Slide ${index + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover rounded-md"
                       />
                     </SwiperSlide>

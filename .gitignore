@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Backup gambar asli sebelum dikompres ke WebP (hapus setelah dicek)
+_original-images/
