@@ -1,4 +1,49 @@
+import { Wifi, Drone } from "lucide-react";
+
+// Proyek tanpa foto (images kosong) akan menampilkan ikon "icon" sebagai pengganti
 const projects = [
+  {
+    id: 6,
+    title: "ML-Based Wi-Fi Load Balancing Optimization (2026)",
+    category: "Undergraduate Thesis · Machine Learning · Networking",
+    role: "Sole researcher",
+    description:
+      "An end-to-end pipeline that forecasts access point throughput 5 minutes ahead on a campus Wi-Fi network (8 Aruba APs, 2.4 & 5 GHz), combining network telemetry with class-schedule context. After comparing Persistence, ARIMA/SARIMA, Random Forest, and XGBoost, I designed a band-specific hybrid model (Persistence for 2.4 GHz, XGBoost for 5 GHz) and turned its predictions into client steering, band steering, and transmit-power recommendations, validated with a discrete-event simulation.",
+    // Angka kunci, tampil sebagai kotak statistik di kartu
+    stats: [
+      { value: "426K+", label: "Telemetry records" },
+      { value: "−12%", label: "RMSE (3.110 → 2.722 Mbps)" },
+      { value: "0.628", label: "R², up from 0.515" },
+      { value: "~30%", label: "Less AP load imbalance" },
+    ],
+    highlights: [
+      "49 engineered features from telemetry and class schedules",
+      "Steering recommendations validated by discrete-event simulation",
+    ],
+    tech: ["Python", "XGBoost", "Random Forest", "ARIMA/SARIMA", "SimPy", "InfluxDB", "Aruba WLAN"],
+    icon: Wifi,
+    images: [],
+  },
+  {
+    id: 5,
+    title: "Autonomous Drone Delivery for MBG (2026)",
+    category: "Capstone Project · IoT · Networking · Fullstack",
+    role: "Backend & networking engineer (team of 5)",
+    description:
+      "An autonomous quadcopter and web-based Ground Control Station to deliver free nutritious meals (Makan Bergizi Gratis) to schools in hard-to-reach areas. I built the FastAPI backend and networking layer: a MAVLink-to-JSON bridge, real-time WebSocket telemetry, mission-upload and flight-mode APIs, and a Tailscale VPN over 4G LTE linking the GCS to the drone's Raspberry Pi and Pixhawk flight controller.",
+    stats: [
+      { value: "30/30", label: "Remote commands succeeded" },
+      { value: "178 ms", label: "Avg. round-trip time over 4G" },
+      { value: "5 Hz", label: "Real-time telemetry stream" },
+      { value: "0", label: "Timeouts or lost commands" },
+    ],
+    highlights: [
+      "Autonomous waypoint flight and Return-to-Launch validated in field tests",
+    ],
+    tech: ["FastAPI", "pymavlink", "WebSocket", "Tailscale VPN", "4G LTE", "Next.js", "Leaflet", "Pixhawk", "ArduPilot"],
+    icon: Drone,
+    images: [],
+  },
   {
     id: 1,
     title: "Food Security Classification (2025)",

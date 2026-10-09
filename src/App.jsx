@@ -42,9 +42,12 @@ function App() {
     };
   }, []);
 
-  const [darkMode, setDarkMode] = useState(
-    () => localStorage.getItem("theme") === "dark"
-  );
+  // Pakai pilihan terakhir user; kalau belum pernah memilih, ikuti setting OS
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    if (saved) return saved === "dark";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -55,9 +58,6 @@ function App() {
       root.classList.remove("dark");
       localStorage.setItem("theme", "light");
     }
-
-    // DEBUG LOG
-    console.log("Current HTML class:", root.className);
   }, [darkMode]);
 
   return (
@@ -69,7 +69,7 @@ function App() {
           darkMode ? "bg-black/70" : "bg-slate-900/80"
         }`}
       >
-        <section className="mx-auto flex max-w-5xl items-center justify-between p-4 ">
+        <section className="mx-auto flex max-w-6xl items-center justify-between p-4 ">
           <h1 className="text-2xl font-medium md:text-3xl">
             <ScrollLink
               to="home"
@@ -82,7 +82,7 @@ function App() {
             </ScrollLink>
           </h1>
 
-          <div className="md:hidden flex items-center space-x-4 h-10">
+          <div className="lg:hidden flex items-center space-x-4 h-10">
             {/* Dark Mode Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
@@ -101,7 +101,7 @@ function App() {
             {/* Hamburger Menu (Mobile only) */}
             <button
               id="mobile-menu-button"
-              className={`text-3xl md:hidden focus:outline-none text-white transition-transform duration-500 flex items-center justify-center ${
+              className={`text-3xl lg:hidden focus:outline-none text-white transition-transform duration-500 flex items-center justify-center ${
                 isMenuOpen ? "rotate-90" : "rotate-0"
               }`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -110,7 +110,7 @@ function App() {
             </button>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden lg:flex items-center space-x-4">
             <button
               onClick={() => setDarkMode(!darkMode)}
               className={`w-8 h-8 flex items-center justify-center transition-transform duration-500 ${
@@ -125,7 +125,7 @@ function App() {
               )}
             </button>
             {/* Desktop Nav */}
-            <nav className="hidden md:flex space-x-8 text-lg bg-amber-100 px-6 py-3 rounded-full shadow-md whitespace-nowrap transition duration-300">
+            <nav className="hidden lg:flex space-x-2 xl:space-x-4 text-base xl:text-lg bg-amber-100 px-6 py-3 rounded-full shadow-md whitespace-nowrap transition duration-300">
               <ScrollLink
                 to="home"
                 smooth={true}
@@ -145,6 +145,15 @@ function App() {
                 About Me
               </ScrollLink>
               <ScrollLink
+                to="experience"
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="cursor-pointer hover:bg-amber-500 px-3 py-1 rounded-full font-medium"
+              >
+                Experience
+              </ScrollLink>
+              <ScrollLink
                 to="myworks"
                 smooth={true}
                 duration={600}
@@ -152,6 +161,15 @@ function App() {
                 className="cursor-pointer hover:bg-amber-500 px-3 py-1 rounded-full font-medium"
               >
                 My Works
+              </ScrollLink>
+              <ScrollLink
+                to="organization"
+                smooth={true}
+                duration={600}
+                offset={-80}
+                className="cursor-pointer hover:bg-amber-500 px-3 py-1 rounded-full font-medium"
+              >
+                Organization
               </ScrollLink>
               <ScrollLink
                 to="contact"
@@ -167,12 +185,12 @@ function App() {
         </section>
 
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isMenuOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+          className={`lg:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           } bg-black/30 backdrop-blur-md`}
         >
           <nav className="flex flex-col px-6 py-4 space-y-2">
-            {["home", "aboutme", "myworks", "contact"].map((section, index) => (
+            {["home", "aboutme", "experience", "myworks", "organization", "contact"].map((section, index) => (
               <ScrollLink
                 key={index}
                 to={section}
@@ -186,8 +204,12 @@ function App() {
                   ? "Home"
                   : section === "aboutme"
                   ? "About Me"
+                  : section === "experience"
+                  ? "Experience"
                   : section === "myworks"
                   ? "My Works"
+                  : section === "organization"
+                  ? "Organization"
                   : "Contact Me"}
               </ScrollLink>
             ))}
@@ -242,7 +264,7 @@ function App() {
           {/* Copyright and Social Media Icons */}
           <div className="w-full flex flex-col sm:flex-row justify-between items-center text-sm text-slate-400">
             <p className="mb-4 sm:mb-0">
-              © 2025 Muhamad Fauzan. All rights reserved.
+              © {new Date().getFullYear()} Muhamad Fauzan. All rights reserved.
             </p>
             <div className="flex space-x-4">
               {/* GitHub Icon */}

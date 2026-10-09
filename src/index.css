@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+/* Tailwind v4: dark: mengikuti class .dark di <html> (dari tombol toggle), bukan setting OS */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Token warna branding (Tailwind v4 tidak membaca tailwind.config.js) */
+@theme {
+  --color-background: #f9f5f0;
+  --color-foreground: #1e1e1e;
+  --color-accent: #ffcb47;
+  --color-muted: #fefae0;
+}
